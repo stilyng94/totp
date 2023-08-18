@@ -1,7 +1,7 @@
-import assert from 'node:assert'
-import { test, afterEach } from 'node:test'
-import * as base32 from 'thirty-two'
-import { generateTOTP, getTOTPAuthUri, verifyTOTP } from './index.js'
+const assert = require('node:assert')
+const { test, afterEach } = require('node:test')
+const base32 = require('thirty-two')
+const { generateTOTP, getTOTPAuthUri, verifyTOTP } = require('./index.js')
 
 test('OTP can be generated and verified', () => {
 	const { secret, otp, algorithm, period, digits } = generateTOTP()

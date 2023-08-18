@@ -104,7 +104,7 @@ function verifyHOTP(
  * @returns {{otp: string, secret: string, period: number, digits: number, algorithm: string}}
  * The OTP, secret, and config options used to generate the OTP.
  */
-export function generateTOTP({
+function generateTOTP({
 	period = DEFAULT_PERIOD,
 	digits = DEFAULT_DIGITS,
 	algorithm = DEFAULT_ALGORITHM,
@@ -134,7 +134,7 @@ export function generateTOTP({
  *
  * @returns {string} The OTP Auth URI
  */
-export function getTOTPAuthUri({
+function getTOTPAuthUri({
 	period,
 	digits,
 	algorithm,
@@ -175,7 +175,7 @@ export function getTOTPAuthUri({
  * between the current OTP and the OTP that was verified, or null if the OTP is
  * invalid.
  */
-export function verifyTOTP({
+function verifyTOTP({
 	otp,
 	secret,
 	period,
@@ -226,3 +226,5 @@ function getCounter(period = DEFAULT_PERIOD) {
 	const counter = Math.floor(now / 1000 / period)
 	return counter
 }
+
+module.exports = {verifyTOTP,getTOTPAuthUri,generateTOTP}
