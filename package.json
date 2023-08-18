@@ -1,6 +1,6 @@
 {
   "name": "@epic-web/totp",
-  "type": "module",
+  "type": "commonjs",
   "exports": {
     ".": "./index.js"
   },
