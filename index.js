@@ -1,12 +1,12 @@
 /**
  * This was copy/paste/modified/tested from https://npm.im/notp (MIT)
  */
-import * as crypto from 'crypto'
+const crypto = require('node:crypto')
 
 /**
  * @type {{ encode: (data: string | import('buffer').Buffer) => string, decode: (data: string) => import('buffer').Buffer }}
  */
-import * as base32 from 'thirty-two'
+const base32 = require('thirty-two')
 
 // SHA1 is not secure, but in the context of TOTPs, it's unrealistic to expect
 // security issues. Also, it's the default for compatibility with OTP apps.
